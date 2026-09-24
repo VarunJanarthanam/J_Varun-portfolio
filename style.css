@@ -310,12 +310,11 @@
     font-size: 7px;
   }
 
+  
   .sales-ui-footer > div {
     gap: 5px;
     font-size: 8px;
-  .sales-ui {
-  outline: 5px solid red !important;
-}
+  }
   }
 }
 
