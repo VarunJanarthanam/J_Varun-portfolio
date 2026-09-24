@@ -449,7 +449,8 @@
 }
 
 .project-card[data-category="analytics"] .sales-kpi:last-child {
-  grid-column: 1 / -1;
+  grid-column: auto !important;
+}
 }
 
 .project-card[data-category="analytics"] .sales-kpi small {
