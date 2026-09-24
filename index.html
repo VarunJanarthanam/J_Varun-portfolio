@@ -98,64 +98,143 @@
         
 
 <article class="project-card reveal" data-category="analytics">
-  <div class="project-visual sales-visual">
-    <div class="visual-top">
+
+<div class="project-visual sales-visual">
+  <div class="sales-ui">
+
+    <!-- Dashboard header -->
+    <div class="sales-ui-header">
       <span>SALES PERFORMANCE</span>
       <span>PROJECT / 02</span>
     </div>
 
-    <div class="sales-dashboard">
-      <div class="metric-tile">
-        <small>TOTAL REVENUE</small>
-        <b>$ —</b>
-        <span>Retail sales analysis</span>
+    <!-- KPI cards -->
+    <div class="sales-kpis">
+
+      <div class="sales-kpi">
+        <div class="sales-kpi-text">
+          <small>TOTAL REVENUE</small>
+          <strong>$ —</strong>
+          <span>Retail sales analysis</span>
+        </div>
+        <div class="sales-kpi-icon revenue-icon">▥</div>
       </div>
 
-      <div class="metric-tile">
-        <small>TOTAL PROFIT</small>
-        <b>$ —</b>
-        <span>Profitability analysis</span>
+      <div class="sales-kpi">
+        <div class="sales-kpi-text">
+          <small>TOTAL PROFIT</small>
+          <strong>$ —</strong>
+          <span>Profitability analysis</span>
+        </div>
+        <div class="sales-kpi-icon profit-icon">▤</div>
       </div>
 
-      <div class="metric-tile">
-        <small>OVERALL MARGIN</small>
-        <b>—%</b>
-        <span>Profit margin</span>
+      <div class="sales-kpi">
+        <div class="sales-kpi-text">
+          <small>OVERALL MARGIN</small>
+          <strong>—%</strong>
+          <span>Profit margin</span>
+        </div>
+        <div class="sales-kpi-icon margin-icon">%</div>
       </div>
 
-      <div class="metric-tile">
-        <small>ORDERS</small>
-        <b>5,111</b>
-        <span>Total orders</span>
+      <div class="sales-kpi">
+        <div class="sales-kpi-text">
+          <small>ORDERS</small>
+          <strong>5,111</strong>
+          <span>Total orders</span>
+        </div>
+        <div class="sales-kpi-icon orders-icon">🛒</div>
       </div>
 
-      <div class="metric-tile">
-        <small>CUSTOMERS</small>
-        <b>804</b>
-        <span>Total customers</span>
+      <div class="sales-kpi">
+        <div class="sales-kpi-text">
+          <small>CUSTOMERS</small>
+          <strong>804</strong>
+          <span>Total customers</span>
+        </div>
+        <div class="sales-kpi-icon customers-icon">♙</div>
       </div>
 
-      <div class="metric-tile">
-        <small>AVG. ORDER VALUE</small>
-        <b>$ —</b>
-        <span>Average revenue per order</span>
-      </div>
+    </div>
 
-      <div class="chart-placeholder">
-        <div class="chart-label">MONTHLY SALES TREND</div>
-        <div class="chart-bars">
-          <i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i>
+    <!-- Navigation tabs -->
+    <div class="sales-tabs">
+      <span class="active">Overview</span>
+      <span>Profitability</span>
+      <span>Customers &amp; Products</span>
+      <span>Geography</span>
+    </div>
+
+    <!-- Monthly sales chart -->
+    <div class="sales-chart">
+      <div class="sales-chart-title">MONTHLY SALES TREND</div>
+
+      <div class="sales-chart-body">
+        <div class="sales-y-labels">
+          <span>300K</span>
+          <span>200K</span>
+          <span>100K</span>
+          <span>0</span>
+        </div>
+
+        <div class="sales-plot">
+          <div class="sales-gridline grid-300"></div>
+          <div class="sales-gridline grid-200"></div>
+          <div class="sales-gridline grid-100"></div>
+          <div class="sales-gridline grid-0"></div>
+
+          <div class="sales-bars">
+            <div class="sales-bar" style="--bar-height:25%"></div>
+            <div class="sales-bar" style="--bar-height:39%"></div>
+            <div class="sales-bar" style="--bar-height:31%"></div>
+            <div class="sales-bar" style="--bar-height:51%"></div>
+            <div class="sales-bar" style="--bar-height:45%"></div>
+            <div class="sales-bar" style="--bar-height:63%"></div>
+            <div class="sales-bar" style="--bar-height:37%"></div>
+            <div class="sales-bar" style="--bar-height:69%"></div>
+            <div class="sales-bar" style="--bar-height:54%"></div>
+            <div class="sales-bar" style="--bar-height:82%"></div>
+            <div class="sales-bar" style="--bar-height:61%"></div>
+            <div class="sales-bar" style="--bar-height:71%"></div>
+          </div>
+
+          <div class="sales-months">
+            <span>JAN</span>
+            <span>FEB</span>
+            <span>MAR</span>
+            <span>APR</span>
+            <span>MAY</span>
+            <span>JUN</span>
+            <span>JUL</span>
+            <span>AUG</span>
+            <span>SEP</span>
+            <span>OCT</span>
+            <span>NOV</span>
+            <span>DEC</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="visual-bottom">
-      <span>REVENUE</span>
-      <span>PRODUCTS</span>
-      <span>REGIONS</span>
+    <!-- Bottom summary strip -->
+    <div class="sales-ui-footer">
+      <div>
+        <b>▥</b>
+        <span>REVENUE</span>
+      </div>
+      <div>
+        <b>⬡</b>
+        <span>PRODUCTS</span>
+      </div>
+      <div>
+        <b>◎</b>
+        <span>REGIONS</span>
+      </div>
     </div>
+
   </div>
+</div>
 
   <div class="project-info">
     <div class="project-kicker">
