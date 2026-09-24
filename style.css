@@ -386,3 +386,168 @@
     min-height: 125px;
   }
 }
+
+/* ===== Sales Analytics Card — Match AI Project Layout ===== */
+
+.project-card[data-category="analytics"] {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+}
+
+/* Left side: complete dashboard */
+.project-card[data-category="analytics"] > .sales-visual {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 12px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  align-self: stretch !important;
+  border-radius: 0 !important;
+}
+
+/* Dashboard frame */
+.project-card[data-category="analytics"] .sales-ui {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: none !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Dashboard header */
+.project-card[data-category="analytics"] .sales-ui-header {
+  flex-shrink: 0;
+  padding: 15px 14px 13px;
+}
+
+/* KPI cards */
+.project-card[data-category="analytics"] .sales-kpis {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  padding: 5px 12px 12px !important;
+  flex-shrink: 0;
+}
+
+.project-card[data-category="analytics"] .sales-kpi {
+  min-width: 0;
+  min-height: 80px;
+  padding: 10px !important;
+  box-sizing: border-box;
+}
+
+.project-card[data-category="analytics"] .sales-kpi:last-child {
+  grid-column: 1 / -1;
+}
+
+.project-card[data-category="analytics"] .sales-kpi small {
+  font-size: 8px;
+  white-space: normal;
+}
+
+.project-card[data-category="analytics"] .sales-kpi strong {
+  font-size: clamp(17px, 2vw, 24px);
+}
+
+.project-card[data-category="analytics"] .sales-kpi-text span {
+  font-size: 9px;
+  white-space: normal;
+}
+
+.project-card[data-category="analytics"] .sales-kpi-icon {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Dashboard navigation */
+.project-card[data-category="analytics"] .sales-tabs {
+  display: flex !important;
+  flex-shrink: 0;
+  justify-content: space-around;
+  gap: 5px;
+  padding: 0 7px;
+  font-size: 9px;
+  overflow: hidden;
+}
+
+.project-card[data-category="analytics"] .sales-tabs span {
+  padding: 0 5px;
+}
+
+/* Chart area */
+.project-card[data-category="analytics"] .sales-chart {
+  flex: 1 0 auto;
+  min-height: 150px;
+  margin: 12px !important;
+  padding: 12px 9px !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.project-card[data-category="analytics"] .sales-chart-body {
+  height: 120px !important;
+  min-height: 120px;
+}
+
+/* Dashboard footer */
+.project-card[data-category="analytics"] .sales-ui-footer {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  flex-shrink: 0;
+  min-height: 55px;
+  margin-top: auto;
+  padding: 12px 5px;
+}
+
+/* Right side: project details */
+.project-card[data-category="analytics"] > .project-info {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  width: 100% !important;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  max-height: none !important;
+  box-sizing: border-box;
+  padding: 40px !important;
+  overflow: visible !important;
+}
+
+/* Stack on smaller screens */
+@media (max-width: 900px) {
+  .project-card[data-category="analytics"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .project-card[data-category="analytics"] > .sales-visual {
+    height: auto !important;
+  }
+
+  .project-card[data-category="analytics"] .sales-ui {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .project-card[data-category="analytics"] .sales-chart {
+    flex: none;
+  }
+
+  .project-card[data-category="analytics"] > .project-info {
+    height: auto;
+    padding: 28px 24px !important;
+  }
+}
