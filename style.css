@@ -318,3 +318,71 @@
 }
   }
 }
+
+/* ===== FIX: Show the complete Sales Analytics dashboard ===== */
+
+.project-visual.sales-visual {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  position: relative;
+  display: block;
+  flex: none;
+}
+
+.project-visual.sales-visual .sales-ui {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  display: block;
+  position: relative;
+}
+
+/* Keep the KPI section fully visible */
+.project-visual.sales-visual .sales-kpis {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Give the chart enough room */
+.project-visual.sales-visual .sales-chart {
+  height: auto !important;
+  min-height: 150px;
+  overflow: visible !important;
+}
+
+.project-visual.sales-visual .sales-chart-body {
+  height: 145px !important;
+  min-height: 145px;
+  overflow: visible !important;
+}
+
+/* Keep the bottom summary strip visible */
+.project-visual.sales-visual .sales-ui-footer {
+  position: relative;
+  display: grid;
+  min-height: 55px;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Prevent the project information from covering the dashboard */
+.project-visual.sales-visual + .project-info {
+  position: relative;
+  clear: both;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .project-visual.sales-visual {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .project-visual.sales-visual .sales-chart-body {
+    height: 125px !important;
+    min-height: 125px;
+  }
+}
