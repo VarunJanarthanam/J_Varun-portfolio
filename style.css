@@ -551,3 +551,118 @@
     padding: 28px 24px !important;
   }
 }
+
+/* ===== Sales Analytics: Full-width 50/50 layout ===== */
+
+/* Make the entire project card span the available projects grid */
+.project-card[data-category="analytics"] {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+
+  height: auto !important;
+  max-height: none !important;
+  overflow: hidden !important;
+}
+
+/* LEFT HALF — Dashboard */
+.project-card[data-category="analytics"] > .sales-visual {
+  grid-column: 1;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  align-self: stretch !important;
+}
+
+/* Dashboard frame */
+.project-card[data-category="analytics"] .sales-ui {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* KPI tiles */
+.project-card[data-category="analytics"] .sales-kpis {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  padding: 10px !important;
+}
+
+.project-card[data-category="analytics"] .sales-kpi {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.project-card[data-category="analytics"] .sales-kpi:last-child {
+  grid-column: 1 / -1;
+}
+
+/* Chart */
+.project-card[data-category="analytics"] .sales-chart {
+  min-width: 0 !important;
+  margin: 10px !important;
+  box-sizing: border-box !important;
+}
+
+.project-card[data-category="analytics"] .sales-chart-body {
+  height: 140px !important;
+  min-height: 140px !important;
+}
+
+/* RIGHT HALF — Project information */
+.project-card[data-category="analytics"] > .project-info {
+  grid-column: 2;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 40px !important;
+  box-sizing: border-box !important;
+  align-self: stretch !important;
+  overflow-wrap: anywhere;
+}
+
+/* Mobile and tablet: stack the two halves */
+@media (max-width: 900px) {
+  .project-card[data-category="analytics"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .project-card[data-category="analytics"] > .sales-visual,
+  .project-card[data-category="analytics"] > .project-info {
+    grid-column: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .project-card[data-category="analytics"] .sales-ui {
+    height: auto !important;
+  }
+
+  .project-card[data-category="analytics"] > .project-info {
+    padding: 28px 24px !important;
+  }
+}
