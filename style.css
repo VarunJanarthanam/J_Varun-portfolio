@@ -666,3 +666,17 @@
     padding: 28px 24px !important;
   }
 }
+
+/* Fix Project 01 / Project 02 separation */
+.project-featured .project-visual {
+  height: auto !important;
+  min-height: 380px !important;
+}
+
+.project-featured {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
