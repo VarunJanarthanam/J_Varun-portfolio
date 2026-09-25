@@ -310,11 +310,12 @@
     font-size: 7px;
   }
 
-  
   .sales-ui-footer > div {
     gap: 5px;
     font-size: 8px;
-  }
+  .sales-ui {
+  outline: 5px solid red !important;
+}
   }
 }
 
@@ -449,8 +450,7 @@
 }
 
 .project-card[data-category="analytics"] .sales-kpi:last-child {
-  grid-column: auto !important;
-}
+  grid-column: 1 / -1;
 }
 
 .project-card[data-category="analytics"] .sales-kpi small {
@@ -667,108 +667,117 @@
   }
 }
 
-/* Fix Project 01 / Project 02 separation */
-.project-featured .project-visual {
-  height: auto !important;
-  min-height: 380px !important;
-}
 
-.project-featured {
-  grid-column: 1 / -1 !important;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-/* FINAL FIX — keep Project 01 contained */
-.projects-grid > .project-featured {
-  grid-column: 1 / -1 !important;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  align-items: stretch !important;
-  min-height: 380px !important;
-  height: auto !important;
-}
-
-.projects-grid > .project-featured > .project-visual {
-  height: auto !important;
-  min-height: 380px !important;
-  align-self: stretch !important;
-}
-/* FINAL PROJECT CARD LAYOUT FIX */
-
+/* ===== FINAL PROJECT CARD LAYOUT ===== */
 .projects-grid {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 18px !important;
   align-items: start !important;
 }
 
+/* Project 01 — full-width featured card */
 .projects-grid > .project-featured {
   grid-column: 1 / -1 !important;
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  width: 100% !important;
   height: auto !important;
-  min-height: 0 !important;
+  min-height: 380px !important;
+  max-height: none !important;
   overflow: hidden !important;
-}
-
-.projects-grid > .project-featured > .project-visual {
-  height: 420px !important;
-  min-height: 420px !important;
-  max-height: 420px !important;
-  align-self: start !important;
-}
-
-.projects-grid > .project-featured > .project-info {
-  height: 420px !important;
-  min-height: 420px !important;
   box-sizing: border-box !important;
-  overflow: hidden !important;
-}
-
-.projects-grid > .project-card[data-category="analytics"] {
-  grid-column: 1 / -1 !important;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  height: auto !important;
-  min-height: 0 !important;
-  align-self: start !important;
-}
-/* PROJECT CARD SEPARATION FIX */
-
-.projects-grid > .project-featured {
-  grid-column: 1 / -1 !important;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  height: 420px !important;
-  min-height: 420px !important;
-  max-height: 420px !important;
-  overflow: hidden !important;
-  position: relative !important;
 }
 
 .projects-grid > .project-featured > .project-visual {
-  height: 420px !important;
-  min-height: 420px !important;
-  max-height: 420px !important;
-  position: relative !important;
+  height: auto !important;
+  min-height: 380px !important;
+  max-height: none !important;
+  align-self: stretch !important;
   overflow: hidden !important;
 }
 
 .projects-grid > .project-featured > .project-info {
-  height: 420px !important;
-  min-height: 420px !important;
-  max-height: 420px !important;
+  height: auto !important;
+  min-height: 380px !important;
+  max-height: none !important;
   box-sizing: border-box !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
+/* Project 02 — separate full-width card */
 .projects-grid > .project-card[data-category="analytics"] {
   grid-column: 1 / -1 !important;
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  width: 100% !important;
   height: auto !important;
   min-height: 0 !important;
-  margin-top: 18px !important;
+  max-height: none !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.projects-grid > .project-card[data-category="analytics"] > .sales-visual,
+.projects-grid > .project-card[data-category="analytics"] > .project-info {
+  grid-column: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  align-self: stretch !important;
+  box-sizing: border-box !important;
+}
+
+.projects-grid > .project-card[data-category="analytics"] > .sales-visual {
+  padding: 12px !important;
+  overflow: hidden !important;
+}
+
+.projects-grid > .project-card[data-category="analytics"] .sales-ui {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.projects-grid > .project-card[data-category="analytics"] > .project-info {
+  padding: 40px !important;
+  overflow: visible !important;
+}
+
+/* Keep all KPI tiles on the same grid */
+.projects-grid > .project-card[data-category="analytics"] .sales-kpis {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+}
+
+.projects-grid > .project-card[data-category="analytics"] .sales-kpi:last-child {
+  grid-column: auto !important;
+}
+
+/* Desktop-to-mobile behavior */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .projects-grid > .project-featured,
+  .projects-grid > .project-card[data-category="analytics"] {
+    grid-column: 1 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .projects-grid > .project-featured > .project-visual,
+  .projects-grid > .project-featured > .project-info,
+  .projects-grid > .project-card[data-category="analytics"] > .sales-visual,
+  .projects-grid > .project-card[data-category="analytics"] > .project-info {
+    grid-column: 1 !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
 }
