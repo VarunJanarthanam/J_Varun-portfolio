@@ -695,3 +695,43 @@
   min-height: 380px !important;
   align-self: stretch !important;
 }
+/* FINAL PROJECT CARD LAYOUT FIX */
+
+.projects-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 18px !important;
+  align-items: start !important;
+}
+
+.projects-grid > .project-featured {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.projects-grid > .project-featured > .project-visual {
+  height: 420px !important;
+  min-height: 420px !important;
+  max-height: 420px !important;
+  align-self: start !important;
+}
+
+.projects-grid > .project-featured > .project-info {
+  height: 420px !important;
+  min-height: 420px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.projects-grid > .project-card[data-category="analytics"] {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: start !important;
+}
