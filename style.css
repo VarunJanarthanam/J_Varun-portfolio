@@ -680,3 +680,18 @@
   width: 100% !important;
   box-sizing: border-box !important;
 }
+/* FINAL FIX — keep Project 01 contained */
+.projects-grid > .project-featured {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: stretch !important;
+  min-height: 380px !important;
+  height: auto !important;
+}
+
+.projects-grid > .project-featured > .project-visual {
+  height: auto !important;
+  min-height: 380px !important;
+  align-self: stretch !important;
+}
