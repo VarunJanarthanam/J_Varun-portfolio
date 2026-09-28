@@ -278,7 +278,6 @@
 @media (max-width: 600px) {
   .sales-visual { padding: 6px; }
   .sales-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 5px 9px 10px; }
-  .sales-kpi:last-child { grid-column: span 2; }
   .sales-tabs { gap: 12px; padding: 0 9px; font-size: 9px; }
   .sales-chart { margin: 9px; padding: 10px 7px; }
   .sales-bars, .sales-months { gap: 3px; padding-right: 2px; padding-left: 2px; }
@@ -321,6 +320,7 @@
 .projects-grid > .project-featured > .project-info {
   box-sizing: border-box;
   overflow: visible;
+  padding: 36px;
 }
 
 /* ---- Project 02: Sales Analytics ---- */
@@ -364,10 +364,6 @@
   padding: 10px;
 }
 
-.projects-grid > .project-card[data-category="analytics"] .sales-kpi:last-child {
-  grid-column: 1 / -1;
-}
-
 .projects-grid > .project-card[data-category="analytics"] .sales-chart {
   flex: 1 0 auto;
   margin: 10px;
@@ -387,7 +383,7 @@
 }
 
 .projects-grid > .project-card[data-category="analytics"] > .project-info {
-  padding: 40px;
+  padding: 36px;
   overflow-wrap: anywhere;
 }
 
@@ -408,10 +404,94 @@
   }
 
   .projects-grid > .project-featured > .project-info,
-  .projects-grid > .project-card[data-category="analytics"] > .sales-visual,
   .projects-grid > .project-card[data-category="analytics"] > .project-info {
     grid-column: 1;
     height: auto;
     padding: 28px 24px;
   }
+}
+
+
+/* ---- Filters: keep the hide rule stronger than the grid display rules ---- */
+.projects-grid > .project-card.is-hidden { display: none !important; }
+
+/* ---- Skills: "Additional tools" block ---- */
+.additional-tools { margin-top: 56px; }
+.additional-tools > h3 {
+  margin: 0 0 18px;
+  font: 600 12px var(--display);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---- Tablet: 6 KPI tiles fit nicely in 3 columns ---- */
+@media (min-width: 601px) and (max-width: 900px) {
+  .projects-grid > .project-card[data-category="analytics"] .sales-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE (<= 700px) — alignment fixes
+   ========================================================= */
+@media (max-width: 700px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+
+  /* header */
+  .brand { font-size: 12px; letter-spacing: .08em; gap: 8px; }
+  .brand-mark { width: 32px; height: 32px; font-size: 17px; }
+
+  /* hero */
+  .hero h1 { font-size: clamp(38px, 11.5vw, 60px); }
+  .hero-actions .button { flex: 1 1 100%; justify-content: space-between; }
+  .hero-meta { flex-wrap: wrap; row-gap: 10px; margin-top: 36px; }
+  .meta-line { display: none; }
+  .hero-art { height: 320px; margin: 20px 0 0; transform: scale(.8); }
+
+  /* about */
+  .about-facts { flex-wrap: wrap; gap: 18px 26px; justify-content: flex-start; }
+
+  /* skills: one clean column */
+  .skills-grid { grid-template-columns: 1fr; gap: 12px; }
+  .skill-card { min-height: auto; padding: 22px 20px; }
+  .skill-card p { min-height: 0; }
+  .additional-tools { margin-top: 36px; }
+
+  /* project cards */
+  .project-kicker { flex-wrap: wrap; row-gap: 8px; }
+  .projects-grid > .project-featured > .project-visual { min-height: 240px; padding: 14px; }
+  .projects-grid > .project-featured > .project-info,
+  .projects-grid > .project-card[data-category="analytics"] > .project-info { padding: 24px 20px; }
+  .project-info h3 { font-size: 24px; }
+  .project-links { gap: 14px 22px; }
+
+  /* sales dashboard */
+  .projects-grid > .project-card[data-category="analytics"] > .sales-visual { padding: 8px; }
+  .projects-grid > .project-card[data-category="analytics"] .sales-kpis { gap: 6px; padding: 8px; }
+  .sales-ui-header { padding: 13px 12px 8px; font-size: 9px; }
+  .sales-kpi { min-height: 84px; padding: 10px 8px 9px; gap: 4px; }
+  .sales-kpi small { white-space: normal; line-height: 1.35; font-size: 7.5px; }
+  .sales-kpi strong { margin-top: 6px; font-size: 20px; }
+  .sales-kpi-text span { white-space: normal; padding-top: 6px; font-size: 8.5px; line-height: 1.3; }
+  .sales-kpi-icon { flex: 0 0 22px; width: 22px; height: 24px; font-size: 13px; }
+  .sales-tabs {
+    overflow-x: auto;
+    gap: 4px;
+    padding: 0 8px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sales-tabs::-webkit-scrollbar { display: none; }
+  .sales-tabs span { flex: 0 0 auto; }
+  .projects-grid > .project-card[data-category="analytics"] .sales-chart { margin: 8px; }
+  .projects-grid > .project-card[data-category="analytics"] .sales-chart-body { height: 120px; min-height: 120px; }
+  .projects-grid > .project-card[data-category="analytics"] .sales-ui-footer { padding: 10px 4px; }
+  .sales-ui-footer > div { flex-direction: column; gap: 3px; font-size: 8px; letter-spacing: .4px; }
+  .sales-ui-footer b { font-size: 16px; }
+
+  /* contact / footer */
+  .email-link { font-size: 13px; flex-wrap: wrap; word-break: break-all; gap: 10px; }
+  .contact-link strong { font-size: 15px; }
+  .footer { text-align: left; }
 }
